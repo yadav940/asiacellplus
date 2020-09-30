@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:context=".activity.MainActivity">
+
+    <LinearLayout
+        android:background="@drawable/img_onboard_top_header"
+        android:layout_width="match_parent"
+        android:layout_weight="0.35"
+        android:layout_height="0dp"/>
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.35"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:keepScreenOn="true">
+
+    </VideoView>
+
+    <LinearLayout
+        android:layout_weight="0.3"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+
+        <LinearLayout
+            android:background="@color/cardview_light_background"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/ll_lang"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:id="@+id/ll_lang1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imv_lang1"
+                        android:visibility="invisible"
+                        android:src="@drawable/icon_green_tick"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"/>
+                    <TextView
+                        android:text="زبان"
+                        android:textSize="16dp"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ll_lang2"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imv_lang2"
+                        android:visibility="invisible"
+                        android:src="@drawable/icon_green_tick"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"/>
+
+                    <TextView
+                        android:text="زبان"
+                        android:textSize="16dp"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ll_lang3"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imv_lang3"
+                        android:src="@drawable/icon_green_tick"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"/>
+
+                    <TextView
+                        android:text="English"
+                        android:textSize="16dp"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_edit"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <EditText
+                    android:text="007"
+                    android:id="@+id/edt_phone"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:layout_height="wrap_content"
+                    android:layout_width="200dp">
+                </EditText>
+                <ImageView
+                    android:id="@+id/imv_tick"
+                    android:src="@drawable/icon_grey_tick"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/ll_lets_go"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/button_corners"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="120dp"
+                android:layout_height="40dp">
+
+                <TextView
+                    android:text="Let's go"
+                    android:textSize="16dp"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <ImageView
+                    android:paddingLeft="10dp"
+                    android:src="@drawable/next"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="16dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_next"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/icon_next_btn"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="120dp"
+                android:layout_height="40dp">
+
+                <!--<TextView
+                    android:text="Next"
+                    android:textSize="16dp"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <ImageView
+                    android:paddingLeft="10dp"
+                    android:src="@drawable/next"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="16dp"/>-->
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="40dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <View
+                    android:id="@+id/v_1"
+                    android:background="@color/red"
+                    android:layout_width="40dp"
+                    android:layout_height="5dp"/>
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"/>
+                <View
+                    android:id="@+id/v_2"
+                    android:background="@color/gray"
+                    android:layout_width="40dp"
+                    android:layout_height="5dp"/>
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
