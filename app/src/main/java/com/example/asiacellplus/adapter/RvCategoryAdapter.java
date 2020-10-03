@@ -1,5 +1,6 @@
 package com.example.asiacellplus.adapter;
 
+import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.asiacellplus.R;
+import com.example.asiacellplus.activity.IteamListActivity;
 import com.example.asiacellplus.model.DatumCategory;
 
 import org.w3c.dom.Text;
@@ -35,7 +37,7 @@ public class RvCategoryAdapter extends RecyclerView.Adapter<RvCategoryAdapter.My
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
         //holder.iv_cat_iteam.setImageDrawable();
 
         Glide.with(holder.itemView)  //2
@@ -44,6 +46,12 @@ public class RvCategoryAdapter extends RecyclerView.Adapter<RvCategoryAdapter.My
                 //.placeholder(R.drawable.img_asiacell_logo) //5//7
                 .into(holder.iv_cat_iteam);
         holder.tv_cat_iteam.setText(datumCategoryList.get(position).getName());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                IteamListActivity.startActivity((Activity) v.getContext(),datumCategoryList.get(position).getId());
+            }
+        });
 
     }
 

@@ -1,10 +1,12 @@
 package com.example.asiacellplus.ui.home;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +23,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.example.asiacellplus.Home2Activity;
 import com.example.asiacellplus.R;
 import com.example.asiacellplus.activity.MainActivity;
+import com.example.asiacellplus.activity.SearchActivity;
 import com.example.asiacellplus.adapter.BannerViewPagerAdapter;
 import com.example.asiacellplus.adapter.RvCategoryAdapter;
 import com.example.asiacellplus.model.BannerResponce;
@@ -43,6 +46,8 @@ public class HomeFragment extends Fragment {
     private ProgressDialog dialog;
 
     private RecyclerView rv_category;
+
+    private LinearLayout ll_search;
 
     int images[] = {R.drawable.icon_melody_red, R.drawable.img_asiacell_logo, R.drawable.img_asiacell_logo, R.drawable.img_asiacell_logo};
 
@@ -80,6 +85,15 @@ public class HomeFragment extends Fragment {
         rv_category.setLayoutManager(layoutManager);
         dotsIndicator = (DotsIndicator) root.findViewById(R.id.dots_indicator);
         viewPager = (ViewPager)root.findViewById(R.id.viewPager);
+
+        ll_search = root.findViewById(R.id.ll_search);
+
+        ll_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SearchActivity.startActivity((Activity) v.getContext());
+            }
+        });
         //viewPagerAdapter = new BannerViewPagerAdapter(getContext(), images);
         //viewPager.setAdapter(viewPagerAdapter);
         //dotsIndicator.setViewPager(viewPager);

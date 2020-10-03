@@ -3,15 +3,22 @@ package com.example.asiacellplus.activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
+import android.app.Activity;
+import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.se.omapi.Session;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -22,6 +29,8 @@ import com.example.asiacellplus.Home2Activity;
 import com.example.asiacellplus.R;
 import com.example.asiacellplus.network.APIClient;
 import com.example.asiacellplus.network.APIInterface;
+
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -35,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView imv_lang1,imv_lang2,imv_lang3,imv_tick;
     private EditText edt_phone;
     private ProgressDialog dialog;
+    private final int DIALOG_LOADING=1321;
 
     String baseUrl="https://iraqcomprojects.com/v2/api/";
 
@@ -77,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
-
+        //setLocale(this);
     }
 
     @Override
@@ -140,11 +150,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(edt_phone.getText().length()==10){
                     APIInterface apiInterface = APIClient.getClient().create(APIInterface.class);
                     dialog.show();
+                    //showDialog(DIALOG_LOADING);
                     Call<Object> call = apiInterface.addPhone(edt_phone.getText().toString());
                     call.enqueue(new Callback<Object>() {
                         @Override
                         public void onResponse(Call<Object> call, Response<Object> response) {
                             dialog.dismiss();
+                            //dismissDialog(DIALOG_LOADING);
                             Log.d("tag----------","getting responce");
                             Home2Activity.startActivity(MainActivity.this);
 
@@ -154,6 +166,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         public void onFailure(Call<Object> call, Throwable t) {
                             Log.d("tag----------","getting Error"+t.getMessage());
                             dialog.dismiss();
+                            //dismissDialog(DIALOG_LOADING);
                             Toast.makeText(getApplicationContext(),t.getMessage(),Toast.LENGTH_SHORT).show();;
                         }
                     });
@@ -191,5 +204,51 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 imv_lang3.setVisibility(View.VISIBLE);
                 break;
         }
+
     }
+
+    @Override
+    protected Dialog onCreateDialog(int id) {
+        switch (id) {
+            case DIALOG_LOADING:
+                final Dialog dialog = new Dialog(this, android.R.style.Theme_Translucent);
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.setContentView(R.layout.loading);
+                dialog.setCancelable(true);
+                dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                    @Override
+                    public void onCancel(DialogInterface dialog) {
+                        //onBackPressed();
+                    }
+                });
+                return dialog;
+
+            default:
+                return null;
+        }
+    };
+
+
+    private void restartActivity() {
+        Intent intent = getIntent();
+        finish();
+        startActivity(intent);
+    }
+
+    public static void setLocale(Activity context) {
+        Locale locale;
+        //Sessions session = new Sessions(context);
+        //Log.e("Lan",session.getLanguage());
+        Log.e("Lan","-----------------------------");
+
+        locale = new Locale("ar");
+        Configuration config = new Configuration(context.getResources().getConfiguration());
+        Locale.setDefault(locale);
+        config.setLocale(locale);
+
+        context.getBaseContext().getResources().updateConfiguration(config,
+                context.getBaseContext().getResources().getDisplayMetrics());
+        //restartActivity();
+    }
+
 }

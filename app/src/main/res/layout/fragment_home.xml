@@ -31,13 +31,16 @@
             app:progressMode="false" />
 
         <LinearLayout
+            android:id="@+id/ll_search"
             android:layout_marginTop="20dp"
             android:paddingLeft="12dp"
             android:paddingRight="12dp"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="50dp">
-            <EditText
+            <TextView
+                android:paddingTop="15dp"
+                android:layout_gravity="center"
                 android:hint="Search"
                 android:paddingLeft="10dp"
                 android:layout_weight="1"
@@ -141,7 +144,7 @@
                         android:layout_height="wrap_content"/>
                     <ImageView
                         android:layout_gravity="end"
-                        android:src="@drawable/icon_services_forward"
+                        android:src="@drawable/icon_melody_forward"
                         android:layout_width="20dp"
                         android:layout_height="20dp"/>
                 </LinearLayout>

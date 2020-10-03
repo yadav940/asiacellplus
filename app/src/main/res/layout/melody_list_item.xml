@@ -18,6 +18,7 @@
             android:id="@+id/tv_item"
             android:textSize="17dp"
             android:textColor="@color/black"
+            android:maxLines="3"
             android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
