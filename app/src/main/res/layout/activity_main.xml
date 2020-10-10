@@ -150,7 +150,7 @@
                 android:layout_height="40dp">
 
                 <TextView
-                    android:text="Let's go"
+                    android:text="@string/let_sGo"
                     android:textSize="16dp"
                     android:textColor="@color/white"
                     android:layout_width="wrap_content"

@@ -3,6 +3,7 @@
     package="com.example.asiacellplus">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
     <application
         android:allowBackup="true"
@@ -10,8 +11,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Design.Light.NoActionBar">
-        <activity android:name=".activity.IteamListActivity"></activity>
+        android:hardwareAccelerated="true"
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".activity.ServiceDetailActivity"></activity>
+        <activity android:name=".activity.IteamListActivity" />
         <activity android:name=".activity.SearchActivity" />
         <activity android:name=".activity.MelodyDetailActivity" />
         <activity android:name=".activity.MainActivity">

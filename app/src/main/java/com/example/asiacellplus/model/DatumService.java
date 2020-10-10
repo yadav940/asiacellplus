@@ -4,7 +4,9 @@ package com.example.asiacellplus.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class DatumService {
+import java.io.Serializable;
+
+public class DatumService implements Serializable {
 
 
 

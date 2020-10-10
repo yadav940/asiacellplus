@@ -1,5 +1,6 @@
 package com.example.asiacellplus.adapter;
 
+import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.asiacellplus.R;
+import com.example.asiacellplus.activity.MelodyDetailActivity;
+import com.example.asiacellplus.activity.ServiceDetailActivity;
 import com.example.asiacellplus.model.DatumService;
 
 import java.util.List;
@@ -33,7 +36,7 @@ public class RvServiceAdapter extends RecyclerView.Adapter<RvServiceAdapter.Serv
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ServiceAdapter holder, int position) {
+    public void onBindViewHolder(@NonNull ServiceAdapter holder, final int position) {
         Glide.with(holder.itemView)  //2
                 .load(datumServiceList.get(position).getIcon()) //3
                 .centerCrop() //4
@@ -42,6 +45,12 @@ public class RvServiceAdapter extends RecyclerView.Adapter<RvServiceAdapter.Serv
                 .into(holder.imv_melody_iteam);
         holder.tv_item.setText(datumServiceList.get(position).getItem());
         holder.tv_description.setText(datumServiceList.get(position).getDescription());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ServiceDetailActivity.startActivity((Activity) v.getContext(),datumServiceList.get(position));
+            }
+        });
 
     }
 

@@ -49,6 +49,14 @@ public interface APIInterface {
     @FormUrlEncoded
     Call<IteamListResponce> getiItem(@Field("lang_id") String lang, @Field("category_id") String text);
 
+    @POST("add-token")
+    @FormUrlEncoded
+    Call<Object> addToken(@Field("lang_id") String lang, @Field("device") String device,@Field("token") String token);
+
+    @POST("delete-token")
+    @FormUrlEncoded
+    Call<Object> deleteToken(@Field("device") String device,@Field("token") String token);
+
 
 
 

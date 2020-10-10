@@ -27,6 +27,7 @@ import android.widget.VideoView;
 
 import com.example.asiacellplus.Home2Activity;
 import com.example.asiacellplus.R;
+import com.example.asiacellplus.helpful.AsiacellplusSharedPreferences;
 import com.example.asiacellplus.network.APIClient;
 import com.example.asiacellplus.network.APIInterface;
 
@@ -45,6 +46,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText edt_phone;
     private ProgressDialog dialog;
     private final int DIALOG_LOADING=1321;
+
+    AsiacellplusSharedPreferences sharedPreferences;
 
     String baseUrl="https://iraqcomprojects.com/v2/api/";
 
@@ -80,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         v_1=findViewById(R.id.v_1);
         v_2=findViewById(R.id.v_2);
 
-
+        sharedPreferences=new AsiacellplusSharedPreferences(this);
 
         String path = "android.resource://" + getPackageName() + "/" + R.raw.teamwork_9;
         videoView.setVideoURI(Uri.parse(path));
@@ -167,14 +170,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             Log.d("tag----------","getting Error"+t.getMessage());
                             dialog.dismiss();
                             //dismissDialog(DIALOG_LOADING);
-                            Toast.makeText(getApplicationContext(),t.getMessage(),Toast.LENGTH_SHORT).show();;
+                            Toast.makeText(getApplicationContext(),t.getMessage(),Toast.LENGTH_SHORT).show();
                         }
                     });
 
 
                 }else {
                     Toast.makeText(this,"Please enter phone number",Toast.LENGTH_SHORT).show();
-                    //Home2Activity.startActivity(MainActivity.this);
+                    Home2Activity.startActivity(MainActivity.this);
                 }
                 //HomeActivity.startActivity(MainActivity.this);
                 break;
@@ -192,16 +195,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 imv_lang1.setVisibility(View.VISIBLE);
                 imv_lang2.setVisibility(View.INVISIBLE);
                 imv_lang3.setVisibility(View.INVISIBLE);
+                sharedPreferences.setLanguage(3);
+                MainActivity.setLocale(this,"ku");
                 break;
             case R.id.ll_lang2:
                 imv_lang1.setVisibility(View.INVISIBLE);
                 imv_lang2.setVisibility(View.VISIBLE);
                 imv_lang3.setVisibility(View.INVISIBLE);
+                sharedPreferences.setLanguage(2);
+                MainActivity.setLocale(this,"ar");
+
                 break;
             case R.id.ll_lang3:
                 imv_lang1.setVisibility(View.INVISIBLE);
                 imv_lang2.setVisibility(View.INVISIBLE);
                 imv_lang3.setVisibility(View.VISIBLE);
+                sharedPreferences.setLanguage(1);
+                MainActivity.setLocale(this,"en");
                 break;
         }
 
@@ -235,13 +245,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(intent);
     }
 
-    public static void setLocale(Activity context) {
+    public static void setLocale(Activity context,String langCode) {
         Locale locale;
         //Sessions session = new Sessions(context);
+
         //Log.e("Lan",session.getLanguage());
         Log.e("Lan","-----------------------------");
 
-        locale = new Locale("ar");
+        locale = new Locale(langCode);
         Configuration config = new Configuration(context.getResources().getConfiguration());
         Locale.setDefault(locale);
         config.setLocale(locale);

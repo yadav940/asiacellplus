@@ -11,9 +11,37 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
 
-    <string name="top10_melody">Top 10 Melody</string>
-    <string name="top10_service">Top 10 Service</string>
+
+    <string name="activate">Activate</string>
+    <string name="cancel">Cancel</string>
+    <string name="home">Home</string>
+    <string name="information">Information</string>
     <string name="language">Language</string>
+    <string name="learnMore">Learn More</string>
+    <string name="let_sGo">Let\'s go</string>
+    <string name="melodyInfo">The best of the best, all in one place!\nSelect the songs that callers hear when they call your phone</string>
+    <string name="next">Next</string>
+    <string name="no">No</string>
+    <string name="notifications">Notifications</string>
+    <string name="ok">Ok</string>
+    <string name="phoneNumber">Phone Number</string>
+    <string name="privacyPolicy">Privacy Policy</string>
+    <string name="search">Search</string>
+    <string name="sendAsPresent">Send as present</string>
+    <string name="serviceInfo">We have gathered our user\'s favourite services all in one place. Take a look, you might find something you like!</string>
+    <string name="setAsRBT">Set as RBT</string>
+    <string name="subscribe">Subscribe</string>
+    <string name="termsAndConditions">Terms and Conditions</string>
+    <string name="top10_service">Top 10 Service</string>
+    <string name="top10_melody">Top 10 Melody</string>
+    <string name="unSubscribe">Unsubscribe</string>
+    <string name="yes">Yes</string>
+
+
+
+
+
+
 
 
 </resources>

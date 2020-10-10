@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">asiacellplus</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+    <string name="activate">چالاك</string>
+    <string name="cancel">پوچەڵ كردنەوە</string>
+    <string name="home">سەرەكی</string>
+    <string name="information">زانیاری</string>
+    <string name="language">زمان</string>
+    <string name="learnMore">فێربوونی زیاتر</string>
+    <string name="let_sGo">ڕۆیشتن</string>
+    <string name="melodyInfo">زانیاری میلۆدی</string>
+    <string name="next">دواتر</string>
+    <string name="no">نەخێر</string>
+    <string name="notifications">ئاگاداركردنەوە</string>
+    <string name="ok">بەڵێ</string>
+    <string name="phoneNumber">ژمارەی مۆبایل</string>
+    <string name="privacyPolicy">زانیاری تایبەت</string>
+    <string name="search">گەڕان</string>
+    <string name="sendAsPresent">ناردنی ئێستا</string>
+    <string name="serviceInfo">زانیاری خزمەتگوزاری</string>
+    <string name="setAsRBT">Set as RBT</string>
+    <string name="subscribe">بەشداریكردن</string>
+    <string name="termsAndConditions">مەرجەكان</string>
+    <string name="top10_service">خزمەتگوزاریی تۆپ ١٠</string>
+    <string name="top10_melody">تۆپ ١٠میلۆدی </string>
+    <string name="unSubscribe">ڕاگرتن</string>
+    <string name="yes">بەڵێ</string>
+</resources>

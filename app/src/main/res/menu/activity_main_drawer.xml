@@ -18,18 +18,46 @@
             android:icon="@drawable/icon_services_red"
             android:title="@string/top10_service" />
         <item
+            android:id="@+id/nav_notification"
             android:title="Notification"
             android:icon="@drawable/icon_bell_red"
             app:actionLayout="@layout/widget_switch" />
 
     </group>
-    <group android:checkableBehavior="none">
+    <group android:checkableBehavior="single">
 
         <item
             android:id="@+id/nav_language"
             android:icon="@drawable/icon_map_red"
             android:title="@string/language" />
+        <item
+            android:id="@+id/nav_language_eng"
+            android:title="\u2714 Engilish" />
+        <item
+            android:id="@+id/nav_language_ar"
+            android:title="  Arbic" />
+        <item
+            android:id="@+id/nav_language_"
+            android:title="  Khurdis" />
+
     </group>
+
+    <item android:title="INFORMATION"
+        android:id="@+id/nav_information">
+        <menu>
+            <item
+                android:iconTint="@color/gray"
+                android:id="@+id/nav_privacy_policye"
+                android:icon="@drawable/icon_info_grey"
+                android:title="Privacy Policy" />
+            <item
+                android:iconTint="@color/gray"
+                android:id="@+id/nav_terms_and_conditions"
+                android:icon="@drawable/icon_bullet_list"
+                android:title="Terms and Conditions" />
+        </menu>
+    </item>
+
 
 
 </menu>

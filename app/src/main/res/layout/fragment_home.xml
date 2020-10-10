@@ -41,7 +41,7 @@
             <TextView
                 android:paddingTop="15dp"
                 android:layout_gravity="center"
-                android:hint="Search"
+                android:hint="@string/search"
                 android:paddingLeft="10dp"
                 android:layout_weight="1"
                 android:layout_width="0dp"
@@ -64,6 +64,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_top10_service"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="10dp"
             android:orientation="horizontal"
@@ -86,7 +87,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
-                        android:text="Top 10 Services"
+                        android:text="@string/top10_service"
                         android:textSize="17dp"
                         android:textColor="@color/black"
                         android:layout_weight="1"
@@ -101,7 +102,7 @@
 
                 <TextView
                     android:textColor="@color/black"
-                    android:text="we have gathered aur user's favorite services all in one place. Take a looks, you might find something you like!"
+                    android:text="@string/melodyInfo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
@@ -112,6 +113,7 @@
 
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/ll_top10_molody"
             android:background="@drawable/red_melody_bg"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="10dp"
@@ -136,7 +138,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
-                        android:text="Top 10 Melody"
+                        android:text="@string/top10_melody"
                         android:textSize="17dp"
                         android:textColor="@color/black"
                         android:layout_weight="1"

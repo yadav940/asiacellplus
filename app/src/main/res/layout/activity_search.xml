@@ -22,7 +22,7 @@
         <EditText
             android:id="@+id/edt_search"
             android:layout_gravity="center"
-            android:hint="Search"
+            android:hint="@string/search"
             android:paddingLeft="10dp"
             android:layout_weight="1"
             android:layout_width="0dp"

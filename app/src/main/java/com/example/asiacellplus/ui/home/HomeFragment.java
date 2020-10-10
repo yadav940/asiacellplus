@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -26,10 +27,13 @@ import com.example.asiacellplus.activity.MainActivity;
 import com.example.asiacellplus.activity.SearchActivity;
 import com.example.asiacellplus.adapter.BannerViewPagerAdapter;
 import com.example.asiacellplus.adapter.RvCategoryAdapter;
+import com.example.asiacellplus.helpful.AsiacellplusSharedPreferences;
 import com.example.asiacellplus.model.BannerResponce;
 import com.example.asiacellplus.model.CategoryListResponce;
 import com.example.asiacellplus.network.APIClient;
 import com.example.asiacellplus.network.APIInterface;
+import com.example.asiacellplus.ui.gallery.GalleryFragment;
+import com.example.asiacellplus.ui.slideshow.SlideshowFragment;
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
 
 import retrofit2.Call;
@@ -47,7 +51,8 @@ public class HomeFragment extends Fragment {
 
     private RecyclerView rv_category;
 
-    private LinearLayout ll_search;
+    private LinearLayout ll_search,ll_top10_service,ll_top10_molody;
+    AsiacellplusSharedPreferences sharedPreferences;
 
     int images[] = {R.drawable.icon_melody_red, R.drawable.img_asiacell_logo, R.drawable.img_asiacell_logo, R.drawable.img_asiacell_logo};
 
@@ -78,6 +83,7 @@ public class HomeFragment extends Fragment {
 
         rv_category=root.findViewById(R.id.rv_category);
 
+        sharedPreferences=new AsiacellplusSharedPreferences(getContext());
 
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getContext(), 3)
                 ;
@@ -87,11 +93,35 @@ public class HomeFragment extends Fragment {
         viewPager = (ViewPager)root.findViewById(R.id.viewPager);
 
         ll_search = root.findViewById(R.id.ll_search);
+        ll_top10_service = root.findViewById(R.id.ll_top10_service);
+        ll_top10_molody = root.findViewById(R.id.ll_top10_molody);
+
 
         ll_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SearchActivity.startActivity((Activity) v.getContext());
+            }
+        });
+
+        ll_top10_service.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment someFragment = new SlideshowFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.nav_host_fragment, someFragment ); // give your fragment container id in first parameter
+                transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
+                transaction.commit();
+            }
+        });
+        ll_top10_molody.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment someFragment = new GalleryFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.nav_host_fragment, someFragment ); // give your fragment container id in first parameter
+                transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
+                transaction.commit();
             }
         });
         //viewPagerAdapter = new BannerViewPagerAdapter(getContext(), images);
@@ -100,7 +130,7 @@ public class HomeFragment extends Fragment {
 
         APIInterface apiInterface = APIClient.getClient().create(APIInterface.class);
         dialog.show();
-        Call<BannerResponce> callBanner = apiInterface.getBanner("1");
+        Call<BannerResponce> callBanner = apiInterface.getBanner(sharedPreferences.getLanguage()+"");
         callBanner.enqueue(new Callback<BannerResponce>() {
             @Override
             public void onResponse(Call<BannerResponce> call, Response<BannerResponce> response) {
@@ -119,7 +149,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        Call<CategoryListResponce> categoryListResponceCall=apiInterface.getCategoryList("1");
+        Call<CategoryListResponce> categoryListResponceCall=apiInterface.getCategoryList(sharedPreferences.getLanguage()+"");
         categoryListResponceCall.enqueue(new Callback<CategoryListResponce>() {
             @Override
             public void onResponse(Call<CategoryListResponce> call, Response<CategoryListResponce> response) {
