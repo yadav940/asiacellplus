@@ -37,11 +37,12 @@
     <string name="unSubscribe">Unsubscribe</string>
     <string name="yes">Yes</string>
 
+    <string name="lan_en">\u2714 Engilish</string>
+    <string name="lan_ar">  العربية‎     </string>
+    <string name="lan_ku">كوردى‎     </string>
 
 
-
-
-
+    <string name="contryCode" translatable="false"><u>007</u></string>
 
 
 </resources>

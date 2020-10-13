@@ -37,4 +37,8 @@
     <string name="top10_melody">تۆپ ١٠میلۆدی </string>
     <string name="unSubscribe">ڕاگرتن</string>
     <string name="yes">بەڵێ</string>
+
+    <string name="lan_en">  Engilish</string>
+    <string name="lan_ar"> العربية‎     </string>
+    <string name="lan_ku">\u2714 كوردى‎</string>
 </resources>

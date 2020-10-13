@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "1078820503469",
+    "firebase_url": "https://com-wemited-asiacellplus.firebaseio.com",
+    "project_id": "com-wemited-asiacellplus",
+    "storage_bucket": "com-wemited-asiacellplus.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1078820503469:android:6d7ecfd538b155af",
+        "android_client_info": {
+          "package_name": "com.iraqcom.asiacell"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1078820503469-p7g54l4h0h2ji5gme3mcm49rjg0u7mrr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKiF3oJ-W_qLbkvo1DII2fmHV7WUDqkmI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1078820503469-p7g54l4h0h2ji5gme3mcm49rjg0u7mrr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1078820503469-7afvoolr7vfa03u8h8rh949bpbqr9j1k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.technokriti.asiacellplus"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1078820503469:android:87b54c1a56039cfad8ab24",
+        "android_client_info": {
+          "package_name": "com.technokriti.asiacellplus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1078820503469-p7g54l4h0h2ji5gme3mcm49rjg0u7mrr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKiF3oJ-W_qLbkvo1DII2fmHV7WUDqkmI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1078820503469-p7g54l4h0h2ji5gme3mcm49rjg0u7mrr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1078820503469-7afvoolr7vfa03u8h8rh949bpbqr9j1k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.technokriti.asiacellplus"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

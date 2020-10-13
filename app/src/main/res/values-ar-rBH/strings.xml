@@ -37,4 +37,10 @@
     <string name="top10_melody">أفضل 10 نغمات </string>
     <string name="unSubscribe">ألغاء الأشتراك</string>
     <string name="yes">نعم</string>
+
+
+    <string name="lan_en">  Engilish</string>
+    <string name="lan_ar">\u2714 Arbic</string>
+    <string name="lan_ku">  Khurdis</string>
+
 </resources>

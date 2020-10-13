@@ -14,10 +14,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <androidx.viewpager.widget.ViewPager
+            android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:id="@+id/viewPager"/>
         <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+            android:paddingTop="10dp"
             android:id="@+id/dots_indicator"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
@@ -153,7 +155,7 @@
 
                 <TextView
                     android:textColor="@color/black"
-                    android:text="we have gathered aur user's favorite services all in one place. Take a looks, you might find something you like!"
+                    android:text="@string/serviceInfo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 

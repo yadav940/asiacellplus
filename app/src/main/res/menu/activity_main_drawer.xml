@@ -8,7 +8,7 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/icon_home_red"
-            android:title="@string/menu_home" />
+            android:title="@string/home" />
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/icon_melody_red"
@@ -19,7 +19,7 @@
             android:title="@string/top10_service" />
         <item
             android:id="@+id/nav_notification"
-            android:title="Notification"
+            android:title="@string/notifications"
             android:icon="@drawable/icon_bell_red"
             app:actionLayout="@layout/widget_switch" />
 
@@ -32,29 +32,27 @@
             android:title="@string/language" />
         <item
             android:id="@+id/nav_language_eng"
-            android:title="\u2714 Engilish" />
+            android:title="@string/lan_en" />
         <item
             android:id="@+id/nav_language_ar"
-            android:title="  Arbic" />
+            android:title="@string/lan_ar" />
         <item
-            android:id="@+id/nav_language_"
-            android:title="  Khurdis" />
+            android:id="@+id/nav_language_ku"
+            android:title="@string/lan_ku" />
 
     </group>
 
-    <item android:title="INFORMATION"
+    <item android:title="@string/information"
         android:id="@+id/nav_information">
         <menu>
             <item
-                android:iconTint="@color/gray"
                 android:id="@+id/nav_privacy_policye"
                 android:icon="@drawable/icon_info_grey"
-                android:title="Privacy Policy" />
+                android:title="@string/privacyPolicy" />
             <item
-                android:iconTint="@color/gray"
                 android:id="@+id/nav_terms_and_conditions"
                 android:icon="@drawable/icon_bullet_list"
-                android:title="Terms and Conditions" />
+                android:title="@string/termsAndConditions" />
         </menu>
     </item>
 
